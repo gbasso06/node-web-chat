@@ -15,30 +15,21 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
 	console.log('New user connected');
 
-	// socket.emit('newEmail', {
-	// 	from: 'ritinha@invejosas.com',
-	// 	text: 'Te pego na saída falsiane',
-	// 	createAt:123
-	// });
-
-	socket.on('createEmail', (newEmail) => {
-		console.log('createEmail', newEmail);
+	socket.on('createMessage', (message) => {
+		console.log("createMessage", message);
+		io.emit('newMessage', {
+			from: message.from,
+			text: message.text,
+			createdAt: new Date().getTime()
+		});
 	});
+
 
 	socket.on('disconnect', () => {
 		console.log("Client disconnected");
 	});
 
-	socket.on('createMessage', (newMessage) => {
 
-		socket.emit('newMessage', {
-			from: newMessage.from,
-			text: newMessage.text,
-			createAt:123
-		});
-
-		console.log("createMessage", newMessage);
-	});
 });
 
 server.listen(PORT, () => {
