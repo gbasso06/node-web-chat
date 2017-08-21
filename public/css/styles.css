@@ -69,7 +69,8 @@ button:disabled{cursor:default;background:#698ea5}
 	background:linear-gradient(325deg,rgba(39,107,130,1) 0,rgba(49,84,129,1) 100%)
 	}
 
-.chat__footer,.chat__sidebar li{background:#e6eaee;padding:10px}
+.chat__footer,.chat__sidebar li{
+	background:#e6eaee;padding:10px}
 .chat__sidebar h3{
 	color:#e6eaee;margin:10px 20px;
 	text-align:left
@@ -95,7 +96,7 @@ button:disabled{cursor:default;background:#698ea5}
 	padding:10px
 	}
 
-.chat__footer{display:flex;flex-shrink:0}
+.chat__footer{display:flex;flex-shrink:0;}
 .chat__footer form{flex-grow:1;display:flex}
 .chat__footer form *{margin-right:10px}
 .chat__footer input{border:none;padding:10px;flex-grow:1}
